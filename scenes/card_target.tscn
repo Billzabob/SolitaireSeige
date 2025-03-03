@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp5521yf7ixfc"]
+
+[ext_resource type="Script" path="res://scripts/card_target.gd" id="1_bld8o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iywba"]
+size = Vector3(0.4, 0.6, 0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_psiws"]
+size = Vector2(0.4, 0.6)
+center_offset = Vector3(0, 0, -0.1)
+orientation = 2
+
+[node name="CardTarget" type="Area3D"]
+script = ExtResource("1_bld8o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_iywba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_psiws")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

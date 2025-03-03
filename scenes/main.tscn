@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://v43ny5rmsas4"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_giapb"]
+[ext_resource type="PackedScene" uid="uid://clk6wrfn0odxu" path="res://scenes/card.tscn" id="2_2t1id"]
+[ext_resource type="PackedScene" uid="uid://bp5521yf7ixfc" path="res://scenes/card_target.tscn" id="3_r24s4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3txc2"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_gvi14"]
+sky_material = SubResource("ProceduralSkyMaterial_3txc2")
+
+[sub_resource type="Environment" id="Environment_7s3ye"]
+background_mode = 2
+sky = SubResource("Sky_gvi14")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_giapb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7s3ye")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.482966, -0.595035, 0.6424, -0.12941, 0.677075, 0.724446, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+current = true
+size = 2.0
+
+[node name="Card" parent="." instance=ExtResource("2_2t1id")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+
+[node name="CardTarget" parent="." instance=ExtResource("3_r24s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+
+[node name="CardTarget2" parent="." instance=ExtResource("3_r24s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+
+[node name="CardTarget3" parent="." instance=ExtResource("3_r24s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="CardTarget4" parent="." instance=ExtResource("3_r24s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Card2" parent="." instance=ExtResource("2_2t1id")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
