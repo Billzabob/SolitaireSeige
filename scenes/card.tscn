@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_q5s2c"]
 [ext_resource type="Shader" uid="uid://c3ldoaktoat7s" path="res://shaders/card.tres" id="2_rd2yc"]
-[ext_resource type="Texture2D" uid="uid://ckdws24mg26b8" path="res://queen_of_hearts2.png" id="3_057qf"]
+[ext_resource type="Texture2D" uid="uid://ckdws24mg26b8" path="res://assets/queen_of_hearts2.png" id="3_057qf"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_dwfj8"]
 
